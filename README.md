@@ -109,8 +109,11 @@ Em qualquer projeto, é sempre um desafio obter o código perfeitamente como voc
 Isso deve ser adicionado como uma seção chamada "Crítica" no README.
 
 
+followers = seguidores
+following = seguindo
+
 ## Requirements
-- [ ] List posts (re-posts sitacoes) with filter (all or follow), with 10 itens
+- [X] List posts (re-posts sitacoes) with filter (all or follow), with 10 itens
 - [ ] Novos Posts (novas postagens, republicacoes, e sotações)
   - apenas 5 postagens por dia
   - postagens com no maximo 777 caractesres

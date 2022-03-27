@@ -15,12 +15,14 @@ class Model extends \Illuminate\Database\Eloquent\Model
 
     public $timestamps = false;
 
+    public $uuid = true;
+
     protected static function boot()
     {
         parent::boot();
 
         static::creating(function ($model) {
-            if (empty($model->id)) {
+            if ($model->uuid == true && empty($model->id)) {
                 $model->id = (string) Uuid::uuid1();
             }
         });
