@@ -114,7 +114,7 @@ following = seguindo
 
 ## Requirements
 - [X] List posts (re-posts sitacoes) with filter (all or follow), with 10 itens
-- [ ] Novos Posts (novas postagens, republicacoes, e sotações)
+- [X] Novos Posts (novas postagens, republicacoes, e sotações)
   - apenas 5 postagens por dia
   - postagens com no maximo 777 caractesres
   - sem atualização ou exlusao de postagens
@@ -126,7 +126,7 @@ following = seguindo
   - numeros de seguindo
   - numero de postagens, incluindo: republicacoes, postagens de citacoes
   - nao se pode seguir a si msm
-- [ ] Listagem dos 5 ultimos posts do usuario, incluindo paginação
+- [X] Listagem dos 5 ultimos posts do usuario, incluindo paginação
 - [ ] Mostrar se segue usuario ou não
 - [ ] Seguir usuario
 - [ ] Deseguir usuario

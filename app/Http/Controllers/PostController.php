@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePostRequest;
 use App\Models\User;
 use App\Services\ListPostsByUser;
+use App\Services\StorePost;
 
 class PostController extends Controller
 {
@@ -27,6 +28,8 @@ class PostController extends Controller
 
     public function store(StorePostRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        return response()->json(StorePost::Execute($data));
     }
 }
