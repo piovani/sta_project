@@ -9,4 +9,9 @@ class FollowingUser extends \App\Models\Model
     public $incrementing = false;
 
     public $uuid = false;
+
+    protected $fillable = [
+        'user_id',
+        'following_user_id',
+    ];
 }

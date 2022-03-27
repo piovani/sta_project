@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     PostController,
     UserController,
+    FollowingController,
 };
 
 Route::prefix('/')
@@ -17,4 +18,11 @@ Route::prefix('/post')
     ->group(function () {
         Route::get('/', 'index');
         Route::post('/', 'store');
+    });
+
+Route::prefix('/follow')
+    ->controller(FollowingController::class)
+    ->group(function () {
+        Route::post('/follow', 'follow');
+        Route::post('/unfollow', 'unfollow');
     });

@@ -119,7 +119,7 @@ following = seguindo
   - postagens com no maximo 777 caractesres
   - sem atualização ou exlusao de postagens
   - pode repostar com um comentario
-- [ ] Inf. User
+- [X] Inf. User
   - nome de usuarios (apenas caracteres alfanumericos)
   - date start Posterr "25 de março de 2021"
   - numeros de seguidores
@@ -127,7 +127,7 @@ following = seguindo
   - numero de postagens, incluindo: republicacoes, postagens de citacoes
   - nao se pode seguir a si msm
 - [X] Listagem dos 5 ultimos posts do usuario, incluindo paginação
-- [ ] Mostrar se segue usuario ou não
+- [X] Mostrar se segue usuario ou não
 - [ ] Seguir usuario
 - [ ] Deseguir usuario
   - deve retornar postagens com sitacoes
