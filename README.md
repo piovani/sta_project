@@ -130,11 +130,11 @@ following = seguindo
 - [ ] Mostrar se segue usuario ou não
 - [ ] Seguir usuario
 - [ ] Deseguir usuario
-- [ ] Pesquisa de posts
-  - nao deve retornar republicacoes (add filttro para isso)
   - deve retornar postagens com sitacoes
 - [ ] Testes automatizados
 - Escreva no README em uma sessão `Planning` explicando todas as etapas para alterar o projeto:
-para o recurso resposta direta com detalhes
+      para o recurso resposta direta com detalhes
 - Escreve no README a autocritica do projeto, dizendo o que pode ser melhorando se tivese mais tempo
+- [ ] Pesquisa de posts
+    - nao deve retornar republicacoes (add filttro para isso)
 - 
