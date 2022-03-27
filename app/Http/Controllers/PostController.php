@@ -3,29 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
-use App\Http\Requests\UpdatePostRequest;
-use App\Models\Post;
+use App\Models\User;
+use App\Services\ListPostsByUser;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        dd("AQU");
+        if (!$userId = request()->get('user_id')) {
+            return response()->json(['message' => 'please enter the user_id in the params in the "user_Id" field']);
+        }
+
+        if (!$user = User::find($userId)) {
+            return response()->json(['message' => 'please enter a valid user']);
+        }
+
+        $page = (int) request()->get('user_id') ?? 1;
+        $perPage = (int) request()->get('user_id') ?? 10;
+        $follow = (bool) request()->get('follows') ?? false;
+
+        return response()->json(ListPostsByUser::Execute($user, $page, $perPage, $follow));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StorePostRequest  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(StorePostRequest $request)
     {
-        dd("rutri ");
+        //
     }
 }
