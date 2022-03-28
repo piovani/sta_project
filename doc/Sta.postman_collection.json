@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "401957e3-5ea0-4683-ad20-630878ca7cb6",
+		"name": "Sta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/post/?user_id=cc64b7f6-ae15-11ec-827c-0242ac150003&page=2&per_page=20",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"post",
+								""
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "cc64b7f6-ae15-11ec-827c-0242ac150003"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "per_page",
+									"value": "20"
+								},
+								{
+									"key": "follows",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"cc64b7f6-ae15-11ec-827c-0242ac150003\",\n    \"content\": \"teste de texto\",\n    \"repost_post_id\": \"ccc0f4ee-ae15-11ec-a6dc-0242ac150003\",\n    \"quote_user_id\": \"cc68157c-ae15-11ec-94b3-0242ac150003\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/post/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"post",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Info",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/?user_id=cc64b7f6-ae15-11ec-827c-0242ac150003",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								""
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "cc64b7f6-ae15-11ec-827c-0242ac150003"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Follow",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"cc64b7f6-ae15-11ec-827c-0242ac150003\",\n    \"following_user_id\": \"cc6929a8-ae15-11ec-997d-0242ac150003\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/follow/follow",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"follow",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UnCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"cc64b7f6-ae15-11ec-827c-0242ac150003\",\n    \"following_user_id\": \"cc6929a8-ae15-11ec-997d-0242ac150003\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/follow/unfollow",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"follow",
+								"unfollow"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
