@@ -2,22 +2,41 @@
 
 namespace Tests\Unit\Services;
 
+use App\Models\FollowingUser;
 use App\Models\User;
-use PHPUnit\Framework\TestCase;
+use App\Services\DestroyFollow;
+use Tests\TestCase;
 
 class DestroyFollowTest extends TestCase
 {
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
-    public function test_destroy_follow_true()
+    function test_destroy_follow_execute_true()
     {
         $user = User::factory()->create();
+        $following = User::factory()->create();
 
-        dd($user);
+        FollowingUser::factory()->create([
+            'user_id' => $user->id,
+            'following_user_id' => $following->id,
+        ]);
 
-        $this->assertTrue(true);
+        $this->assertDatabaseCount(FollowingUser::class, 1);
+
+        $res = DestroyFollow::Execute($user, $following);
+
+        $this->assertDatabaseCount(FollowingUser::class, 0);
+        $this->assertEquals($res, ['message' => 'ok']);
+    }
+
+    function test_destroy_follow_execute_false()
+    {
+        $user = User::factory()->create();
+        $following = User::factory()->create();
+
+        $this->assertDatabaseCount(FollowingUser::class, 0);
+
+        $res = DestroyFollow::Execute($user, $following);
+
+        $this->assertDatabaseCount(FollowingUser::class, 0);
+        $this->assertEquals($res, ['message' => 'was not found']);
     }
 }
